@@ -2,7 +2,7 @@ import requests
 import json
 import time
 
-serverURL = 'http://localhost:19091/json_rpc'
+serverURL = 'http://localhost:24000/json_rpc'
 
 headers = {'content-type': 'application/json'}
 

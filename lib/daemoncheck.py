@@ -11,13 +11,13 @@ def runningcheck():
     if platform == 'win32':
         import wmi
         wmi = wmi.WMI ()
-        for process in wmi.Win32_Process(name='bitmonerod.exe'):
+        for process in wmi.Win32_Process(name='myntd.exe'):
             #print process.ProcessId, process.Name
             if process.Name:
                 daemonrunning = True
 
     elif platform == 'linux' or platform == 'linux2' or platform == 'linux32':
-        p = sub.Popen("ps -A | grep bitmonerod", shell=True, stdout=sub.PIPE, stderr=sub.PIPE)
+        p = sub.Popen("ps -A | grep myntd", shell=True, stdout=sub.PIPE, stderr=sub.PIPE)
         output, errors = p.communicate()
         if output:
             daemonrunning = True

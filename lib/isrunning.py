@@ -13,10 +13,10 @@ def runningcheck():
         wmi = wmi.WMI()
         for process in wmi.Win32_Process():
             # print process.ProcessId, process.Name
-            if process.Name == 'bitmonerod.exe':
+            if process.Name == 'myntd.exe':
                 daemonrunning = True
                 # print 'daemon'
-            if process.Name == 'simplewallet.exe':
+            if process.Name == 'mynt-wallet-cli.exe':
                 walletrunning = True
                 # print 'wallet'
             if process.Name == 'minerd.exe':
@@ -26,9 +26,9 @@ def runningcheck():
         p = subprocess.Popen("ps -A", shell=True, stdout=subprocess.PIPE,
                       stderr=subprocess.PIPE)
         output, errors = p.communicate()
-        if 'bitmonerod' in output:
+        if 'myntd' in output:
             daemonrunning = True
-        if 'simplewallet' in output:
+        if 'mynt-wallet-cli' in output:
             walletrunning = True
         if 'minerd' in output:
             minerrunning = True

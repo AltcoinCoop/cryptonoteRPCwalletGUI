@@ -12,11 +12,11 @@ def simplewalletloader(walletname, walletpw, isname):
         print "***Opening ___" + walletname + "___ wallet file rpc interface***"
         if platform == 'win32':
             subprocess.Popen(
-                "start simplewallet.exe --wallet-file {0} --password {1} --rpc-bind-port 19091 --set_log 0\r\nnpause".format(
+                "start myntnote-wallet-rpc.exe --wallet-file {0} --password {1} --rpc-bind-port 24000 --set_log 0\r\nnpause".format(
                     walletname, walletpw), shell=True)
         elif platform == 'linux' or platform == 'linux2' or platform == 'darwin':
             subprocess.Popen(
-                'xterm -bg black -hold -e "./simplewallet --wallet-file {0} --password {1} --rpc-bind-port 19091"'.format(
+                'xterm -bg black -hold -e "./myntnote-wallet-rpc --wallet-file {0} --password {1} --rpc-bind-port 24000"'.format(
                     walletname, walletpw))
 
     # Generate and then launch if wallet file doesn't exist
@@ -24,12 +24,12 @@ def simplewalletloader(walletname, walletpw, isname):
         print "Generating wallet file " + walletname
         if platform == 'win32':
             walletgen = subprocess.Popen(
-                "simplewallet.exe --generate-new-wallet {0} --password {1} --set_log 0".format(
+                "myntnote-wallet-rpc.exe --generate-new-wallet {0} --password {1} --rpc-bind-port 24000 --set_log 0".format(
                     walletname, walletpw), shell=True, stdin=subprocess.PIPE,
                 stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         elif platform == 'linux' or platform == 'linux2' or platform == 'darwin':
             walletgen = subprocess.Popen(
-                "./simplewallet --generate-new-wallet {0} --password {1} --set_log 0".format(
+                "./myntnote-wallet-rpc --generate-new-wallet {0} --password {1} --rpc-bind-port 24000 --set_log 0".format(
                 walletname, walletpw), shell=True, stdin=subprocess.PIPE,
                 stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         print "Wallet gen'ed"
@@ -50,11 +50,11 @@ def simplewalletloader(walletname, walletpw, isname):
         print "***Opening ___" + walletname + "___ wallet file rpc interface***"
         if platform == 'win32':
             subprocess.Popen(
-                "start simplewallet --wallet-file {0} --password {1} --rpc-bind-port 19091 --set_log 0\r\nnpause".format(
+                "start myntnote-wallet-rpc.exe --wallet-file {0} --password {1} --rpc-bind-port 24000 --set_log 0\r\nnpause".format(
                     walletname, walletpw), shell=True)
         elif platform == 'linux' or platform == 'linux2' or platform == 'linux32':
             subprocess.Popen(
-                'xterm -bg black -hold -e "./simplewallet --wallet-file {0} --password {1} --rpc-bind-port 19091 --set_log 0"'.format(
+                'xterm -bg black -hold -e "./myntnote-wallet-rpc --wallet-file {0} --password {1} --rpc-bind-port 24000 --set_log 0"'.format(
                     walletname, walletpw), shell=True)
 
 

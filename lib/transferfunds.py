@@ -2,7 +2,7 @@ import requests
 import json
 from ctypes import c_uint64
 
-serverURL = 'http://localhost:19091/json_rpc'
+serverURL = 'http://localhost:24000/json_rpc'
 
 
 def transferfundsrpccall(amount, address, mixin, paymentid):
